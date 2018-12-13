@@ -16,3 +16,4 @@
 
 ## Chapter 8 - Wi-Fi Weather Station
 
+(book size 5.5" x 8.5")
