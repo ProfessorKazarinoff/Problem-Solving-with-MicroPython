@@ -1,0 +1,14 @@
+%% lstlistings_settings.tplx %%
+
+    \lstset{
+        language={},
+        basicstyle=\ttfamily,
+        stringstyle=\color{cm-string},
+        commentstyle=\color{cm-comment},
+        keywordstyle=\color{cm-keyword}\bfseries,
+        %keywordstyle = {[3]\color{cm-operator}},
+        %morekeywords = [3]{>>>,+,-,/,*,**,%},
+        showstringspaces=false,
+        }
+
+\newcommand{\passthrough}[1]{#1}

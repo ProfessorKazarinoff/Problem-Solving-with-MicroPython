@@ -1,0 +1,4 @@
+%% paragraph_settings.tplx %%
+
+    \setlength{\parskip}{0.5em} %for a half space between paragraphs
+    \setlength{\parindent}{0em} %for no paragraph indent

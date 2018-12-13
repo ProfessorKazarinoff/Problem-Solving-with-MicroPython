@@ -1,0 +1,45 @@
+%% book_PSMP.tplx %%
+%
+% Built off of the report.tplx template %
+
+((* extends 'report.tplx' *))
+
+%===============================================================================
+% Problem Solving with MicroPython Template
+%===============================================================================
+
+((* block docclass *))
+    \documentclass[11pt]{book}
+((* endblock docclass *))
+
+((* block packages *))
+    ((* include 'installed_packages.tplx' *))
+    ((( super() )))
+((* endblock packages *))
+
+((* block definitions *))
+    ((* include 'lstlistings_settings.tplx' *))
+    ((* include 'chapter_settings.tplx' *))
+    ((* include 'paragraph_settings.tplx' *))
+    ((* include 'TOC_settings.tplx' *))
+    ((* include 'jupyter_notebook_colors.tplx' *))
+    ((* block title *))
+        ((* include 'title.tplx' *))
+    ((* endblock title *))
+    ((* block author *))
+        ((* include 'author.tplx' *))
+    ((* endblock author *))
+    ((* block date *))
+        ((* include 'date.tplx' *))
+    ((* endblock date *))
+
+    ((( super() )))
+((* endblock definitions *))
+
+((* block margins *))
+    ((* include 'page_geometry.tplx' *))
+((* endblock margins *))
+
+((* block markdowncell scoped *))
+    ((* include 'markdown_source.tplx' *))
+((* endblock markdowncell *))
