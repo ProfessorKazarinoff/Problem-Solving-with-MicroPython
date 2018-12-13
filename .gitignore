@@ -478,3 +478,6 @@ GitHub.sublime-settings
 
 # any Pycharm .idea directory
 .idea/
+
+# gooey_config.json file that gets created automatically when the GUI is run
+conversion_tools/gooey_config.json
