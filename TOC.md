@@ -1,5 +1,7 @@
 # TOC
 
+## Preface
+
 ## Chapter 1 - What is MicroPython
 
 ## Chapter 2 - Installing MicroPython
@@ -24,7 +26,9 @@
 
 ## Chapter 10 - Servo Robot
 
-## Kit Contents
+## Appendix
+
+# Kit Contents
 
 ESP8266
 2 breadboards

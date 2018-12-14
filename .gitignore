@@ -481,3 +481,7 @@ GitHub.sublime-settings
 
 # gooey_config.json file that gets created automatically when the GUI is run
 conversion_tools/gooey_config.json
+
+# the whole pdf directory
+
+pdf/
