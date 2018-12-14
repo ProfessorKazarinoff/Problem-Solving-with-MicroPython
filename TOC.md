@@ -31,21 +31,44 @@
 # Kit Contents
 
 ESP8266
-2 breadboards
+
+breadboard
+
 base plate
+
+Cary case
+
 Micro USB data cable
+
 power brick
+
 battery holder
+
 Jumper Wires
+
 LEDs
+
+RGB LED
+
 330 Ohm resistors
+
 10 kOhm resistors
-temperature sensor - TMP36
-potentiometer
+
+temperature sensor - TMP36 or DS18B20 (one wire)
+
+potentiometer (little blue)
+
 photoresistor
-push buttons
+
+push buttons or slide switch
+
 piezo buzzer
+
 LCD screen
+
 hoby servo
+
+PIR motion sensor?
+
 
 (book size 5.5" x 8.5")
