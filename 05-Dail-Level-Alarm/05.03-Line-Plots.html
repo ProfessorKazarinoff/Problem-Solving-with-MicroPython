@@ -1,0 +1,841 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Line Plots &#8212; Engineering Materials Programming</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Engineering Materials Programming</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../welcome.html">
+   Problem Solving with MicroPython Book
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Chapters
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../00-Preface/00-00-Motivation.html">
+   1. Preface
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../00-Preface/00-01-Acknowledgements.html">
+     Acknowledgements
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../00-Preface/00-02-Supporting_Materials.html">
+     Supporting Materials
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../00-Preface/00-04-Errata.html">
+     Errata
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../00-Preface/00-05-Hardware.html">
+     Hardware
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../01-What-is-MicroPython/01-00-Introduction.html">
+   2. What is Python?
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-What-is-MicroPython/01-01-What_is_Python.html">
+     What is Python?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-What-is-MicroPython/01-02-Why_Python.html">
+     Why Python?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-What-is-MicroPython/01-03-What_is_Anaconda.html">
+     What is Anaconda?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-What-is-MicroPython/01-04-Summary.html">
+     Summary
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Appendix
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../99-Appendix/99-01-Built_in_Functions.html">
+   Python Built-in Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../99-Appendix/99-02-Virtual_Environments.html">
+   Virtual Environments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../99-Appendix/99-03-Problem_Solving_with_MicroPython_Book_Construction.html">
+   Problem Solving 101 with Python Book Construction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../99-Appendix/99-04-Contributions.html">
+   Contributions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../99-Appendix/99-05-About_the_Author.html">
+   About the Author
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/05-Dail-Level-Alarm/05.03-Line-Plots.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ProfessorKazarinoff/Engineering-Materials-Programming/"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/ProfessorKazarinoff/Engineering-Materials-Programming//issues/new?title=Issue%20on%20page%20%2F05-Dail-Level-Alarm/05.03-Line-Plots.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ProfessorKazarinoff/Engineering-Materials-Programming/main?urlpath=tree/Engineering-Materials-Programming-Book/05-Dail-Level-Alarm/05.03-Line-Plots.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Line Plots
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#customizing-matplotlib-plots">
+   Customizing matplotlib plots
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#axis-labels-title-and-legend">
+     Axis Labels, Title, and Legend
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#line-color-line-width-line-style-line-opacity-and-marker-options">
+     Line Color, Line Width, Line Style, Line Opacity and Marker Options
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#line-width">
+       line width
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#line-style">
+       line style
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#color">
+       color
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#color-format">
+       color format
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#alpha-opacity">
+       alpha (opacity)
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#marker-shape">
+       marker shape
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="line-plots">
+<h1>Line Plots<a class="headerlink" href="#line-plots" title="Permalink to this headline">¶</a></h1>
+<p>Line plots in matplotlib can be created using matplotlib’s pyplot library. To create a line plot with Python and matplotlib, first import matplotlib’s pyplot library using the line:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplot.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+<p>It is common practice to use the alias <code class="docutils literal notranslate"><span class="pre">plt</span></code> for the <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> library. Defining <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> as <code class="docutils literal notranslate"><span class="pre">plt</span></code> allows us to use the syntax <code class="docutils literal notranslate"><span class="pre">plt.&lt;function</span> <span class="pre">name&gt;</span></code> instead of <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot.&lt;function</span> <span class="pre">name&gt;</span></code> in the rest of our code. See the differences below:</p>
+<p>Importing <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> with no alias:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span>
+
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Importing <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> with the alias <code class="docutils literal notranslate"><span class="pre">plt</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Using the alias <code class="docutils literal notranslate"><span class="pre">plt</span></code> simplifies the code and cuts down the number of keystrokes needed to create a plot. Any alias can be used, such as <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">matplotlib.pyplot</span> <span class="pre">as</span> <span class="pre">RainbowUnicorn</span></code>, but the alias <code class="docutils literal notranslate"><span class="pre">plt</span></code> is the standard convention.</p>
+<p>If building matplotlib plots in a Jupyter notebook, include the line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+</pre></div>
+</div>
+<p>Below the import line. The <code class="docutils literal notranslate"><span class="pre">%matplotlib</span> <span class="pre">inline</span></code> line will output matplotlib plots directly in Jupyter notebook output cells.</p>
+<p>To build the first line plot, first import matplotlib. If using a jupyter notebook include the line <code class="docutils literal notranslate"><span class="pre">%matplotlib</span> <span class="pre">inline</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="c1"># if using a Jupyter notebook, include:</span>
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+</pre></div>
+</div>
+<p>Once matplotlib is imported, and plots are set to display in Jupyter notebook output cells, we need data to plot. We will create the data as a Python <em>list</em>. In Python, <code class="docutils literal notranslate"><span class="pre">list</span></code> is a built-in data structure which can store multiple values. Lists are defined in Python using square brackets <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code>. The elements of a list are separated using commas <code class="docutils literal notranslate"><span class="pre">[item1,</span> <span class="pre">item2,</span> <span class="pre">item</span> <span class="pre">3]</span></code>.</p>
+<p>An example line of code to create a list of numbers in Python is below:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The numbers 1, 3, 4, and 8 are stored in a list. Once the list is defined, we can plot the values using matplotlib’s <code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code> function. To create a line plot, pass the list of numbers as an <em>argument</em> to the <code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code> function. Arguments are values passed to functions as input. The command <code class="docutils literal notranslate"><span class="pre">plt.show()</span></code> is needed at the end to show the plot. Make sure to include the double parenthesis <code class="docutils literal notranslate"><span class="pre">()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="c1"># if using a Jupyter notebook, include:</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/05.03-Line-Plots_5_0.png" src="../_images/05.03-Line-Plots_5_0.png" />
+</div>
+</div>
+<p>A line plot of the numbers 1, 3, 4, 8 is produced. Note the points 1, 3, 4, 8 are the y-values on the plot. The x-axis starts at zero and ends at three. Matplotlib automatically set the x-axis values, because only one list was supplied to <code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code>. Let’s specify two lists, one for the x-values on the plot called <code class="docutils literal notranslate"><span class="pre">x</span></code> and one for the y-values on the plot called <code class="docutils literal notranslate"><span class="pre">y</span></code>. With these two lists created, call <code class="docutils literal notranslate"><span class="pre">plt.plot(x,y)</span></code> and <code class="docutils literal notranslate"><span class="pre">plt.show()</span></code> and see the changes on a new plot.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="c1"># if using a Jupyter notebook, include:</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/05.03-Line-Plots_7_0.png" src="../_images/05.03-Line-Plots_7_0.png" />
+</div>
+</div>
+<p>A line plot with x-values 0, 2, 4, 6 is produced. By specifying two lists to <code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code>, we control both the x and y points shown in the line plot. The plot works, but it is pretty basic. In the next section, you will learn how to customize matplotlib plots.</p>
+</div>
+<div class="section" id="customizing-matplotlib-plots">
+<h1>Customizing matplotlib plots<a class="headerlink" href="#customizing-matplotlib-plots" title="Permalink to this headline">¶</a></h1>
+<p>Matplotlib plots can be customized in many ways. Let’s build upon the previous example and add a couple of features to the line plot. These additional plot features include:</p>
+<ul class="simple">
+<li><p>Axis Labels, Title, and Legend</p></li>
+<li><p>Line Color, Line Width, Line Style, Line Opacity and Marker Options</p></li>
+</ul>
+<div class="section" id="axis-labels-title-and-legend">
+<h2>Axis Labels, Title, and Legend<a class="headerlink" href="#axis-labels-title-and-legend" title="Permalink to this headline">¶</a></h2>
+<p>Axis labels, a title, and a legend are added to line plots constructed with matplotlib. Each of these features is specified with a different matplotlib command.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Plot feature</p></th>
+<th class="head"><p>matplotlib command</p></th>
+<th class="head"><p>Example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>x-axis label</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">plt.xlabel()</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">plt.xlabel('time</span> <span class="pre">in</span> <span class="pre">seconds')</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>x-axis limits</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">plt.xlim()</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">plt.xlim([0,</span> <span class="pre">10])</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>y-axis label</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">plt.ylabel()</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">plt.ylabel('distance</span> <span class="pre">in</span> <span class="pre">meters')</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>y-axis limits</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">plt.ylim()</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">plt.ylim([-5,</span> <span class="pre">5])</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>title</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">plt.title()</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">plt.title('distance</span> <span class="pre">vs.</span> <span class="pre">time')</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>legend</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">plt.legend()</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">plt.legend(['run</span> <span class="pre">1'])</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>Note the words passed into the <code class="docutils literal notranslate"><span class="pre">plt.xlabel()</span></code>, <code class="docutils literal notranslate"><span class="pre">plt.ylabel()</span></code> and <code class="docutils literal notranslate"><span class="pre">plt.title()</span></code> need to be enclosed in quotation marks <code class="docutils literal notranslate"><span class="pre">'</span>&#160; <span class="pre">'</span></code>. In Python, quotation marks denote <em>strings</em>. A string is a Python data type which contains letter, numbers, punctuation, symbols, and spaces. The <code class="docutils literal notranslate"><span class="pre">plt.legend()</span></code> function expects a <em>list of strings</em>.</p>
+<p>A list of strings is similar to a list of numbers. The list is defined using square brackets <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code>. A list of strings needs to have each string enclosed in quotes <code class="docutils literal notranslate"><span class="pre">'</span>&#160; <span class="pre">'</span></code> and separated by a comma <code class="docutils literal notranslate"><span class="pre">,</span></code> as in <code class="docutils literal notranslate"><span class="pre">['string1','string2',string3']</span></code>. If there is only one line on a plot, only one string needs to be in the list strings passed to <code class="docutils literal notranslate"><span class="pre">plt.legend()</span></code>. Even if there is only one string in a list, the square brackets used to define the list still need to be included (otherwise a simple string is defined, not a list of strings).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="c1"># if using a Jupyter notebook, include:</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x values&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;y values&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;plotted x and y values&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;line 1&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/05.03-Line-Plots_10_0.png" src="../_images/05.03-Line-Plots_10_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="line-color-line-width-line-style-line-opacity-and-marker-options">
+<h2>Line Color, Line Width, Line Style, Line Opacity and Marker Options<a class="headerlink" href="#line-color-line-width-line-style-line-opacity-and-marker-options" title="Permalink to this headline">¶</a></h2>
+<p>Line color, line width, line style, and markers options can be customized in a matplotlib plot. Line color, line width, and line style are included as extra <em>keyword arguments</em> in the <code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code> function call. A keyword argument is a special type of argument passed into a function that must be stated explicitly by name. Regular arguments passed to functions are called <em>positional arguments</em>. Positional arguments need to be passed to the function in order, but positional argument names do not need to be specified. In the code line below <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> are positional arguments and <code class="docutils literal notranslate"><span class="pre">color='r'</span></code> is a keyword argument.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Examples of some of the keyword arguments that can be specified in a <code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code> function call are in the table below:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Plot feature</p></th>
+<th class="head"><p><code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code> keyword argument</p></th>
+<th class="head"><p>Example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>width of line</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">linewidth</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">plt.plot(x,</span> <span class="pre">y,</span> <span class="pre">linewidth</span> <span class="pre">=</span> <span class="pre">4)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>solid, dashed, dotted line</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">linestyle</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">plt.plot(x,</span> <span class="pre">y,</span> <span class="pre">linestyle</span> <span class="pre">=</span> <span class="pre">'-')</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>line color</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">color</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">plt.plot(x,</span> <span class="pre">y,</span> <span class="pre">color</span> <span class="pre">=</span> <span class="pre">'red')</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>line opacity (transparency)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">alpha</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">plt.plot(x,</span> <span class="pre">y,</span> <span class="pre">alpha</span> <span class="pre">=</span> <span class="pre">0.5)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>marker shape</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">marker</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">plt.plot(x,</span> <span class="pre">y,</span> <span class="pre">marker</span> <span class="pre">=</span> <span class="pre">'o')</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>The general format of a <code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code> function call with lots of options specified is:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">&lt;</span><span class="n">x</span><span class="o">-</span><span class="n">data</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">y</span><span class="o">-</span><span class="n">data</span><span class="o">&gt;</span><span class="p">,</span>
+         <span class="n">linewideth</span><span class="o">=&lt;</span><span class="nb">float</span> <span class="ow">or</span> <span class="nb">int</span><span class="o">&gt;</span><span class="p">,</span>
+         <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;&lt;linestyle abbreviation&gt;&#39;</span><span class="p">,</span>
+         <span class="n">color</span><span class="o">=</span><span class="s1">&#39;&lt;color abbreviation&gt;&#39;</span><span class="p">,</span> 
+         <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;&lt;marker abbreviation&gt;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>An example <code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code> line including line width, style, color, opacity  and marker type is:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> 
+         <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span>
+         <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">,</span>
+         <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span>
+         <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+         <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="line-width">
+<h3>line width<a class="headerlink" href="#line-width" title="Permalink to this headline">¶</a></h3>
+<p>Below is a list of line widths (many other widths are also available)</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p><code class="docutils literal notranslate"><span class="pre">linewidth=&lt;float</span> <span class="pre">or</span> <span class="pre">int&gt;</span></code></p></th>
+<th class="head"><p>Line Width</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0.5</p></td>
+<td><p>0.5 pixels wide</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>1 pixel wide</p></td>
+</tr>
+<tr class="row-even"><td><p>1.5</p></td>
+<td><p>1.5 pixels wide</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>2 pixels wide</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>3 pixels wide</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="line-style">
+<h3>line style<a class="headerlink" href="#line-style" title="Permalink to this headline">¶</a></h3>
+<p>Below is a list of line styles</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p><code class="docutils literal notranslate"><span class="pre">linestyle='&lt;style</span> <span class="pre">abbreviation&gt;'</span></code></p></th>
+<th class="head"><p>Line Style</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">'-'</span></code> or <code class="docutils literal notranslate"><span class="pre">'solid'</span></code></p></td>
+<td><p>solid line (default)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">'--'</span></code> or <code class="docutils literal notranslate"><span class="pre">'dashed'</span></code></p></td>
+<td><p>dashed line</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">'-.'</span></code> or <code class="docutils literal notranslate"><span class="pre">'dashdot'</span></code></p></td>
+<td><p>dash-dot line</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">':'</span></code> or <code class="docutils literal notranslate"><span class="pre">'dotted'</span></code></p></td>
+<td><p>dotted line</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">'None'</span></code> or <code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">'</span></code> or <code class="docutils literal notranslate"><span class="pre">''</span></code></p></td>
+<td><p>no line</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="color">
+<h3>color<a class="headerlink" href="#color" title="Permalink to this headline">¶</a></h3>
+<p>Below is a list of color abbreviations. Note <code class="docutils literal notranslate"><span class="pre">'b'</span></code> is the abbreviation for blue and <code class="docutils literal notranslate"><span class="pre">'k'</span></code> is the abbreviation for black.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p><code class="docutils literal notranslate"><span class="pre">color</span> <span class="pre">='&lt;color</span> <span class="pre">abbreviation&gt;'</span></code></p></th>
+<th class="head"><p>Color Name</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">'b'</span></code></p></td>
+<td><p>Blue</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">'c'</span></code></p></td>
+<td><p>Cyan</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">'g'</span></code></p></td>
+<td><p>Green</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">'k'</span></code></p></td>
+<td><p>Black</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">'m'</span></code></p></td>
+<td><p>magenta</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">'r'</span></code></p></td>
+<td><p>Red</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">'w'</span></code></p></td>
+<td><p>White</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">'y'</span></code></p></td>
+<td><p>Yellow</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="color-format">
+<h3>color format<a class="headerlink" href="#color-format" title="Permalink to this headline">¶</a></h3>
+<p>Colors can also be specified in hexadecimal form surrounded by quotation marks like <code class="docutils literal notranslate"><span class="pre">'#FF69B4'</span></code> or in RGBA (red,green,blue,opacity) color surrounded by parenthesis like <code class="docutils literal notranslate"><span class="pre">(255,182,193,0.5)</span></code>.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p><code class="docutils literal notranslate"><span class="pre">color</span> <span class="pre">='&lt;color</span> <span class="pre">abbreviation&gt;'</span></code></p></th>
+<th class="head"><p>Color Format</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">'#FF69B4'</span></code></p></td>
+<td><p>hexadecimal</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">(255,182,193,0.5)</span></code></p></td>
+<td><p>RGBA</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="alpha-opacity">
+<h3>alpha (opacity)<a class="headerlink" href="#alpha-opacity" title="Permalink to this headline">¶</a></h3>
+<p>Below is a list of alpha (opacity) values (any alpha value between 0.0 and 1.0 is possible)</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p><code class="docutils literal notranslate"><span class="pre">alpha</span> <span class="pre">=</span> <span class="pre">&lt;float</span> <span class="pre">or</span> <span class="pre">int&gt;</span></code></p></th>
+<th class="head"><p>Opacity</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+<td><p>transparent</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">0.5</span></code></p></td>
+<td><p>Half transparent</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+<td><p>Opaque</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="marker-shape">
+<h3>marker shape<a class="headerlink" href="#marker-shape" title="Permalink to this headline">¶</a></h3>
+<p>Below is a list of maker styles</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p><code class="docutils literal notranslate"><span class="pre">marker='&lt;marker</span> <span class="pre">abbreviation&gt;'</span></code></p></th>
+<th class="head"><p>Marker Style</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;.&quot;</span></code></p></td>
+<td><p>point</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;o&quot;</span></code></p></td>
+<td><p>circle</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;v&quot;</span></code></p></td>
+<td><p>triangle_down</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;^&quot;</span></code></p></td>
+<td><p>triangle_up</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;s&quot;</span></code></p></td>
+<td><p>square</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;*&quot;</span></code></p></td>
+<td><p>star</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;h&quot;</span></code></p></td>
+<td><p>hexagon</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;+&quot;</span></code></p></td>
+<td><p>plus</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;P&quot;</span></code></p></td>
+<td><p>filled plus</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;x&quot;</span></code></p></td>
+<td><p>x</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;X&quot;</span></code></p></td>
+<td><p>filled x</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;D&quot;</span></code></p></td>
+<td><p>diamond</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;d&quot;</span></code></p></td>
+<td><p>thin diamond</p></td>
+</tr>
+</tbody>
+</table>
+<p>In addition to <code class="docutils literal notranslate"><span class="pre">marker='&lt;marker</span> <span class="pre">style&gt;'</span></code>, marker edge color, marker face color, and marker size can be specified with:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span>
+         <span class="o">...</span>
+         <span class="n">markeredgecolor</span><span class="o">=</span><span class="s1">&#39;&lt;color abbreviation&gt;&#39;</span><span class="p">,</span>
+         <span class="n">markerfacecolor</span><span class="o">=</span><span class="s1">&#39;&lt;color abbreviation&gt;&#39;</span><span class="p">,</span>
+         <span class="n">markersize</span><span class="o">=&lt;</span><span class="nb">float</span> <span class="ow">or</span> <span class="nb">int</span><span class="o">&gt;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To construct a matplotlib line plot with:</p>
+<ul class="simple">
+<li><p>line width of 0.5</p></li>
+<li><p>dashed line</p></li>
+<li><p>red line</p></li>
+<li><p>circle markers</p></li>
+<li><p>marker size of 10</p></li>
+<li><p>marker face color mostly transparent (alpha = 0.1)</p></li>
+</ul>
+<p>The one long <code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code> function call is below. Note how the keyword arguments are separated by commas and are on different lines. Separate lines are not necessary but do improve the readability of the code.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="c1"># if using a Jupyter notebook, include:</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span>
+         <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+         <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span>
+         <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span>
+         <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span>
+         <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+         <span class="n">markerfacecolor</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.1</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/05.03-Line-Plots_13_0.png" src="../_images/05.03-Line-Plots_13_0.png" />
+</div>
+</div>
+<p>The plot produced contains a thin 0.5 width dashed red line. The plot’s line markers are 10pt in size, mostly transparent, and red. This plot looks good. However, to include the plot in a report or presentation, the plot must be saved as an image file. The next section details how matplotlib plots can be saved in a variety of file formats.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./05-Dail-Level-Alarm"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Peter D. Kazarinoff<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

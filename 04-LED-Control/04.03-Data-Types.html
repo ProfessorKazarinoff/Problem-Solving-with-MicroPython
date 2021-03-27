@@ -1,0 +1,484 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Types &#8212; Engineering Materials Programming</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Engineering Materials Programming</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../welcome.html">
+   Problem Solving with MicroPython Book
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Chapters
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../00-Preface/00-00-Motivation.html">
+   1. Preface
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../00-Preface/00-01-Acknowledgements.html">
+     Acknowledgements
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../00-Preface/00-02-Supporting_Materials.html">
+     Supporting Materials
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../00-Preface/00-04-Errata.html">
+     Errata
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../00-Preface/00-05-Hardware.html">
+     Hardware
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../01-What-is-MicroPython/01-00-Introduction.html">
+   2. What is Python?
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-What-is-MicroPython/01-01-What_is_Python.html">
+     What is Python?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-What-is-MicroPython/01-02-Why_Python.html">
+     Why Python?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-What-is-MicroPython/01-03-What_is_Anaconda.html">
+     What is Anaconda?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-What-is-MicroPython/01-04-Summary.html">
+     Summary
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Appendix
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../99-Appendix/99-01-Built_in_Functions.html">
+   Python Built-in Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../99-Appendix/99-02-Virtual_Environments.html">
+   Virtual Environments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../99-Appendix/99-03-Problem_Solving_with_MicroPython_Book_Construction.html">
+   Problem Solving 101 with Python Book Construction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../99-Appendix/99-04-Contributions.html">
+   Contributions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../99-Appendix/99-05-About_the_Author.html">
+   About the Author
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/04-LED-Control/04.03-Data-Types.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ProfessorKazarinoff/Engineering-Materials-Programming/"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/ProfessorKazarinoff/Engineering-Materials-Programming//issues/new?title=Issue%20on%20page%20%2F04-LED-Control/04.03-Data-Types.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ProfessorKazarinoff/Engineering-Materials-Programming/main?urlpath=tree/Engineering-Materials-Programming-Book/04-LED-Control/04.03-Data-Types.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#integers">
+   Integers
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#floating-point-numbers">
+   Floating Point Numbers
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#strings">
+   Strings
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#numbers-as-strings">
+     Numbers as Strings
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#boolean">
+   Boolean
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="data-types">
+<h1>Data Types<a class="headerlink" href="#data-types" title="Permalink to this headline">¶</a></h1>
+<p>Python has many useful built-in data types. Python variables can store different types of data. A variable’s data type is created dynamically, without the need to explicitly define a data type when the variable is created. It is useful for problem solvers to understand a couple of Python’s core data types in order to write well-constructed code. This section details of a few different data types in Python.</p>
+<p>Python’s <code class="docutils literal notranslate"><span class="pre">type()</span></code> function is used to investigate a variable or object’s type. The syntax to use the <code class="docutils literal notranslate"><span class="pre">type()</span></code> function is below:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="integers">
+<h2>Integers<a class="headerlink" href="#integers" title="Permalink to this headline">¶</a></h2>
+<p>Integers are one of the Python data types. An integer is a whole number, negative, positive or zero. In Python, integer variables are defined by assigning a whole number to a variable. Python’s <code class="docutils literal notranslate"><span class="pre">type()</span></code> function can be used to investage is a variable is assigned an integer.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="go">&lt;class &#39;int&#39;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="go">&lt;class &#39;int&#39;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+<span class="go">&lt;class &#39;int&#39;&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="floating-point-numbers">
+<h2>Floating Point Numbers<a class="headerlink" href="#floating-point-numbers" title="Permalink to this headline">¶</a></h2>
+<p>Floating point numbers or <em>floats</em> are another Python data type. Floats are decimals, positive, negative and zero. In Python, floats are defined when a number contains a decimal point <code class="docutils literal notranslate"><span class="pre">.</span></code> Floats can also be defined by typing numbers in scientific notation which contain exponents. Both a lower case <code class="docutils literal notranslate"><span class="pre">e</span></code> or an upper case <code class="docutils literal notranslate"><span class="pre">E</span></code> work to define floats in scientific notation.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="mf">6.2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="go">&lt;class &#39;float&#39;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.03</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="go">&lt;class &#39;float&#39;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Na</span> <span class="o">=</span> <span class="mf">6.02e23</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Na</span>
+<span class="go">6.02e+23</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">Na</span><span class="p">)</span>
+<span class="go">&lt;class &#39;float&#39;&gt;</span>
+</pre></div>
+</div>
+<p>To define a variable is a float instead of an integer, even if it is assigned a whole number, a trailing decimal point <code class="docutils literal notranslate"><span class="pre">.</span></code> is used. Note the difference when a decimal point <code class="docutils literal notranslate"><span class="pre">.</span></code> comes after a whole number:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">g</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+<span class="go">&lt;class &#39;int&#39;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g</span> <span class="o">=</span> <span class="mf">5.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+<span class="go">&lt;class &#39;float&#39;&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="strings">
+<h2>Strings<a class="headerlink" href="#strings" title="Permalink to this headline">¶</a></h2>
+<p>Strings are sequences of letters, numbers, symbols, and spaces. In Python, strings can be almost any length and can contain spaces. String variables are assigned in Python using quotation marks <code class="docutils literal notranslate"><span class="pre">'</span>&#160;&#160; <span class="pre">'</span></code>. Strings can contain blank spaces. A blank space is a valid string character in Python string.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">string</span> <span class="o">=</span> <span class="s1">&#39;z&#39;</span>
+<span class="go">&gt;&gt;&gt;&gt; type(string)</span>
+<span class="go">&lt;class &#39;str&#39;&gt;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">string</span> <span class="o">=</span> <span class="s1">&#39;Engineers&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+<span class="go">&lt;class &#39;str&#39;&gt;</span>
+</pre></div>
+</div>
+<div class="section" id="numbers-as-strings">
+<h3>Numbers as Strings<a class="headerlink" href="#numbers-as-strings" title="Permalink to this headline">¶</a></h3>
+<p>Numbers and decimals can be defined as strings too. If a decimal number is defined using quotes <code class="docutils literal notranslate"><span class="pre">'</span>&#160;&#160; <span class="pre">'</span></code>, the number is saved as a string rather than as a float. Integers defined using quotes become strings as well.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">num</span> <span class="o">=</span> <span class="s1">&#39;5.2&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<span class="go">&lt;class &#39;str&#39;&gt;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">num</span> <span class="o">=</span> <span class="s1">&#39;2&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<span class="go">&lt;class &#39;str&#39;&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="boolean">
+<h2>Boolean<a class="headerlink" href="#boolean" title="Permalink to this headline">¶</a></h2>
+<p>The <em>boolean</em> data type is either True or False. In Python, boolean variables are defined by the <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code> keywords.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="go">&lt;class &#39;bool&#39;&gt;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="go">&lt;class &#39;bool&#39;&gt;</span>
+</pre></div>
+</div>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code> must have an Upper Case first letter. Using a lowercase <code class="docutils literal notranslate"><span class="pre">true</span></code> returns an error.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="n">c</span> <span class="o">=</span> <span class="n">true</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;input&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">NameError</span><span class="p">:</span> <span class="n">name</span> <span class="s1">&#39;true&#39;</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">defined</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">false</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;input&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">NameError</span><span class="p">:</span> <span class="n">name</span> <span class="s1">&#39;false&#39;</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">defined</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./04-LED-Control"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Peter D. Kazarinoff<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

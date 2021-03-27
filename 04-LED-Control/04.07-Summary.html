@@ -1,0 +1,549 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Summary &#8212; Engineering Materials Programming</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Engineering Materials Programming</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../welcome.html">
+   Problem Solving with MicroPython Book
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Chapters
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../00-Preface/00-00-Motivation.html">
+   1. Preface
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../00-Preface/00-01-Acknowledgements.html">
+     Acknowledgements
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../00-Preface/00-02-Supporting_Materials.html">
+     Supporting Materials
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../00-Preface/00-04-Errata.html">
+     Errata
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../00-Preface/00-05-Hardware.html">
+     Hardware
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../01-What-is-MicroPython/01-00-Introduction.html">
+   2. What is Python?
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-What-is-MicroPython/01-01-What_is_Python.html">
+     What is Python?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-What-is-MicroPython/01-02-Why_Python.html">
+     Why Python?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-What-is-MicroPython/01-03-What_is_Anaconda.html">
+     What is Anaconda?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-What-is-MicroPython/01-04-Summary.html">
+     Summary
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Appendix
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../99-Appendix/99-01-Built_in_Functions.html">
+   Python Built-in Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../99-Appendix/99-02-Virtual_Environments.html">
+   Virtual Environments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../99-Appendix/99-03-Problem_Solving_with_MicroPython_Book_Construction.html">
+   Problem Solving 101 with Python Book Construction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../99-Appendix/99-04-Contributions.html">
+   Contributions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../99-Appendix/99-05-About_the_Author.html">
+   About the Author
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/04-LED-Control/04.07-Summary.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ProfessorKazarinoff/Engineering-Materials-Programming/"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/ProfessorKazarinoff/Engineering-Materials-Programming//issues/new?title=Issue%20on%20page%20%2F04-LED-Control/04.07-Summary.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ProfessorKazarinoff/Engineering-Materials-Programming/main?urlpath=tree/Engineering-Materials-Programming-Book/04-LED-Control/04.07-Summary.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#key-terms-and-concepts">
+   Key Terms and Concepts
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary-of-python-functions-and-commands">
+   Summary of Python Functions and Commands
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#additional-resoures">
+   Additional Resoures
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="summary">
+<h1>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h1>
+<p>This is the text summary for the chapter. Will be about half a page long</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<div class="section" id="key-terms-and-concepts">
+<h2>Key Terms and Concepts<a class="headerlink" href="#key-terms-and-concepts" title="Permalink to this headline">¶</a></h2>
+<p>REPL</p>
+<p>operator</p>
+<p>variable</p>
+<p>mathematical operator</p>
+<p>command Line</p>
+<p>error</p>
+<p>module</p>
+<p>Standard Library</p>
+<p>import</p>
+<p>prompt</p>
+<p>print</p>
+<p>integer</p>
+<p>numeric data type</p>
+<p>scalar</p>
+<p>float</p>
+<p>floating point number</p>
+<p>complex number</p>
+<p>boolean</p>
+<p>True</p>
+<p>False</p>
+<p>index</p>
+<p>input</p>
+<p>output</p>
+</div>
+<div class="section" id="summary-of-python-functions-and-commands">
+<h2>Summary of Python Functions and Commands<a class="headerlink" href="#summary-of-python-functions-and-commands" title="Permalink to this headline">¶</a></h2>
+<p>Below is a summary of the functions and operators used in this chapter:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Arithmetic Opperators</p></th>
+<th class="head"><p>description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">+</span></code></p></td>
+<td><p>Addition</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-</span></code></p></td>
+<td><p>Subtraction</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">*</span></code></p></td>
+<td><p>Multiplication</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">/</span></code></p></td>
+<td><p>Division</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">**</span></code></p></td>
+<td><p>Exponents</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">_</span></code></p></td>
+<td><p>answer in memory</p></td>
+</tr>
+</tbody>
+</table>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Trig Function</p></th>
+<th class="head"><p>description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sin</span></code></p></td>
+<td><p>sine of angle in radians</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">cos</span></code></p></td>
+<td><p>cosine of angle in radians</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">tan</span></code></p></td>
+<td><p>tangent of angle in radians</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pi</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\pi\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">degrees</span></code></p></td>
+<td><p>convert radians to degrees</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">radians</span></code></p></td>
+<td><p>convert degrees to radians</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">asin</span></code></p></td>
+<td><p>inverse sine</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">acos</span></code></p></td>
+<td><p>inverse cosine</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">atan</span></code></p></td>
+<td><p>inverse tangent</p></td>
+</tr>
+</tbody>
+</table>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Logarithms and Exponents Function</p></th>
+<th class="head"><p>description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">math</span> <span class="pre">import</span> <span class="pre">*</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">log</span></code></p></td>
+<td><p>log base e, natural log</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">log10</span></code></p></td>
+<td><p>log base 10</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">exp</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(e^{power}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">e</span></code></p></td>
+<td><p>the constant e</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pow(x,y)</span></code></p></td>
+<td><p>x raised to the y power</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sqrt</span></code></p></td>
+<td><p>square root</p></td>
+</tr>
+</tbody>
+</table>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Statistical Function</p></th>
+<th class="head"><p>description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">statistics</span> <span class="pre">import</span> <span class="pre">*</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">mean</span></code></p></td>
+<td><p>mean (average)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">median</span></code></p></td>
+<td><p>median (middle value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">mode</span></code></p></td>
+<td><p>(most often)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">stdev</span></code></p></td>
+<td><p>standard deviation of a sample</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pstdev</span></code></p></td>
+<td><p>standard deviation of a population</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="additional-resoures">
+<h2>Additional Resoures<a class="headerlink" href="#additional-resoures" title="Permalink to this headline">¶</a></h2>
+<p>Python’s Built-in functions on the Python Docs:</p>
+<blockquote>
+<div><p><a class="reference external" href="https://docs.python.org/3/library/functions.html">https://docs.python.org/3/library/functions.html</a></p>
+</div></blockquote>
+<p>Documentation of the <strong>math</strong> module on the Python Docs:</p>
+<blockquote>
+<div><p><a class="reference external" href="https://docs.python.org/3/library/math.html">https://docs.python.org/3/library/math.html</a></p>
+</div></blockquote>
+<p>Documentation of the <strong>statistics</strong> module on the Python Docs:</p>
+<blockquote>
+<div><p><a class="reference external" href="https://docs.python.org/3/library/statistics.html">https://docs.python.org/3/library/statistics.html</a></p>
+</div></blockquote>
+<p><em>How to Round Numbers in Python</em> by David Amos on <a class="reference external" href="http://RealPython.com">RealPython.com</a>:</p>
+<blockquote>
+<div><p><a class="reference external" href="https://realpython.com/python-rounding/">https://realpython.com/python-rounding/</a></p>
+</div></blockquote>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./04-LED-Control"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Peter D. Kazarinoff<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
