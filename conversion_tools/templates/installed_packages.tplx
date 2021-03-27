@@ -1,8 +1,0 @@
-%% installed_packages.tplx %%
-
-    \usepackage{pmboxdraw}
-    \usepackage{verbatim}
-    \usepackage[breakable]{tcolorbox}
-    \usepackage{listings}
-    \usepackage{geometry} % Used to adjust the document margins
-    \usepackage{titlesec} % Used to customize section and subsection numbering

@@ -1,4 +1,0 @@
-%% TOC_settings.tplx %%
-
-    \setcounter{secnumdepth}{1} %only chapter and sections are numbered, subsections and subsubsections are not numbered
-    \setcounter{tocdepth}{1}    %only chapter and sections in TOC, subsections and subsubsections are not in TOC

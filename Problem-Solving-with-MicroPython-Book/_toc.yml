@@ -1,0 +1,54 @@
+# Table of content
+# Learn more at https://jupyterbook.org/customize/toc.html
+#
+- file: welcome.md
+- part: Chapters
+  numbered: 2
+  chapters:
+  - file: 00-Preface/00-00-Motivation.ipynb
+    sections:
+      - file: 00-Preface/00-01-Acknowledgements.ipynb
+      - file: 00-Preface/00-02-Supporting_Materials.ipynb
+      - file: 00-Preface/00-03-Formatting_Conventions.ipynb
+      - file: 00-Preface/00-04-Errata.ipynb
+      - file: 00-Preface/00-05-Hardware.ipynb
+  - file: 01-What-is-MicroPython/01-00-Introduction.ipynb
+    sections:
+      - file: 01-What-is-MicroPython/01-01-What_is_Python.ipynb
+      - file: 01-What-is-MicroPython/01-02-Why_Python.ipynb
+      - file: 01-What-is-MicroPython/01-03-What_is_Anaconda.ipynb
+      - file: 01-What-is-MicroPython/01-04-Summary.ipynb
+  # - file: 02-Atomic-Structure-and-Bonding/introduction-atomic-structure-and-bonding.ipynb
+  #   sections:
+  #     - file: 02-Atomic-Structure-and-Bonding/bond-energy-vs-distance.ipynb
+  #     - file: 02-Atomic-Structure-and-Bonding/bar_charts_with_error_bars.md
+  #     - file: 02-Atomic-Structure-and-Bonding/CTE_calc.ipynb
+  # - file: 03-Crystal-Structure/crystal-structure-intro.ipynb
+  #   sections:
+  #     - file: 03-Crystal-Structure/unit-cells.md
+  # - file: 04-Polymers/polymer-intro.md
+  #   sections:
+  #     - file: 04-Polymers/polymer-density-problem.ipynb
+  # - file: 05-Defects/defects-intro.md
+  #   sections:
+  #     - file: 05-Defects/vacancy-concentration.ipynb
+  # - file: 06-Diffusion/diffusion-intro.md
+  #   sections:
+  #     - file: 06-Diffusion/diffusion_calculation.ipynb
+  # - file: 07-Mechanical-Properties/mechanical-properties-intro.md
+  #   sections:
+  #     - file: 07-Mechanical-Properties/stress-strain-curves
+  #     - file: 07-Mechanical-Properties/stress_strain_curve_with_inset_elastic_region.ipynb
+  #     - file: 07-Mechanical-Properties/bar_plot_with_error_bars
+  # - file: 08-Cold-Working/cold-work-intro.md
+  #   sections:
+  #     - file: 08-Cold-Working/cold_work_problem.ipynb
+- part: Appendix
+  numbered: false
+  chapters:
+  - file: 99-Appendix/99-00-Appendix.ipynb
+  - file: 99-Appendix/99-01-Built_in_Functions.ipynb
+  - file: 99-Appendix/99-02-Virtual_Environments.ipynb
+  - file: 99-Appendix/99-03-Problem_Solving_with_MicroPython_Book_Construction.ipynb
+  - file: 99-Appendix/99-04-Contributions.ipynb
+  - file: 99-Appendix/99-05-About_the_Author.ipynb
