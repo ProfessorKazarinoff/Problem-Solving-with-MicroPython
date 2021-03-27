@@ -1,7 +1,7 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: Engineering Materials Programming
+title: Problem Solving with MicroPython
 author: Peter D. Kazarinoff
 logo: logo.png
 
@@ -21,9 +21,9 @@ bibtex_bibfiles:
 
 # Information about where the book exists on the web
 repository:
-  url: https://github.com/ProfessorKazarinoff/Engineering-Materials-Programming/  # Online location of your book
-  path_to_book: Engineering-Materials-Programming-Book  # Optional path to your book, relative to the repository root
-  branch: main  # Which branch of the repository should be used when creating links (optional)
+  url: https://github.com/ProfessorKazarinoff/Problem-Solving-with-MicroPython/  # Online location of your book
+  path_to_book: Problem-Solving-with-MicroPython-Book  # Optional path to your book, relative to the repository root
+  branch: master  # Which branch of the repository should be used when creating links (optional)
 
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
