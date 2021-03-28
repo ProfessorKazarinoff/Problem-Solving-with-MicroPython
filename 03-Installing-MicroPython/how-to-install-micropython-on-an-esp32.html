@@ -1,0 +1,590 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prerequisites &#8212; Problem Solving with MicroPython</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Problem Solving with MicroPython</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../welcome.html">
+   Problem Solving with MicroPython Book
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Chapters
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../00-Preface/00-00-Motivation.html">
+   1. Preface
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../00-Preface/00-01-Acknowledgements.html">
+     Acknowledgements
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../00-Preface/00-02-Supporting_Materials.html">
+     Supporting Materials
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../00-Preface/00-04-Errata.html">
+     Errata
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../00-Preface/00-05-Hardware.html">
+     Hardware
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../01-What-is-MicroPython/01-00-Introduction.html">
+   2. What is Python?
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-What-is-MicroPython/01-01-What_is_Python.html">
+     What is Python?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-What-is-MicroPython/01-02-Why_Python.html">
+     Why Python?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-What-is-MicroPython/01-03-What_is_Anaconda.html">
+     What is Anaconda?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-What-is-MicroPython/01-04-Summary.html">
+     Summary
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Appendix
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../99-Appendix/99-01-Built_in_Functions.html">
+   Python Built-in Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../99-Appendix/99-02-Virtual_Environments.html">
+   Virtual Environments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../99-Appendix/99-03-Problem_Solving_with_MicroPython_Book_Construction.html">
+   Problem Solving 101 with Python Book Construction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../99-Appendix/99-04-Contributions.html">
+   Contributions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../99-Appendix/99-05-About_the_Author.html">
+   About the Author
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/03-Installing-MicroPython/how-to-install-micropython-on-an-esp32.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ProfessorKazarinoff/Problem-Solving-with-MicroPython/"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/ProfessorKazarinoff/Problem-Solving-with-MicroPython//issues/new?title=Issue%20on%20page%20%2F03-Installing-MicroPython/how-to-install-micropython-on-an-esp32.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Prerequisites
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#download-the-firmware">
+   Download the firmware
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-a-virtual-environment-and-install-esptool">
+   Create a virtual environment and install esptool
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#install-the-silabs-driver-for-the-cp210x-chip">
+   Install the SiLabs driver for the CP210x chip
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#connect-esp32-microcontroller-to-computer">
+   Connect ESP32 microcontroller to computer
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#confirm-the-esp32-is-connected-in-the-windows-device-manager-and-determine-the-com-port">
+   Confirm the ESP32 is connected in the Windows Device Manager and determine the COM Port
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#install-micropython-with-esptool">
+   Install MicroPython with esptool
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#download-and-install-putty-a-serial-monitor">
+   Download and install PuTTY, a serial monitor
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#use-putty-to-send-commands-to-the-esp32">
+   Use PuTTY to send commands to the ESP32
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#run-a-few-commands-to-turn-the-built-in-led-on-and-off">
+   Run a few commands to turn the built-in LED on and off
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#going-further">
+   Going Further
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p>Title: How to install MicroPython on an ESP32 microcontroller
+Date: 2021-03-24 06:30
+Modified: 2021-03-24 06:30
+Status: published
+Category: micropython
+Tags: python, micropython, esp32, microcontroller
+Slug: how-to-install-micropython-on-an-esp32
+Authors: Peter D. Kazarinoff</p>
+<p><span class="xref myst"><img alt="micropython and esp32" src="03-Installing-MicroPython/%7Bstatic%7D/posts/micropython/images/micropython_plus_esp32.png" /></span></p>
+<p>In this post, you’ll learn how to install MicroPython on an ESP32 microcontroller. <a class="reference external" href="http://micropython.org/">Micropython</a> is a port, or version of Python designed to run on small, inexpensive, low-power microcontrollers. Examples of microcontrollers that MicroPython can run on include the <a class="reference external" href="https://store.micropython.org/">pyboard</a>, the <a class="reference external" href="https://pycom.io/webshop/#dev">WiPy</a> and ESP8266-based boards like the <a class="reference external" href="https://learn.adafruit.com/adafruit-feather-huzzah-esp8266">Adafruit Feather Huzzah</a>. Also, <strong>MicroPython can be installed on ESP32-based microcontrollers -</strong> and that’s what this post is about.</p>
+<p>If you want to know more about MicroPython, you can read about it in <span class="xref myst">this post</span> and check out the <a class="reference external" href="https://micropython.org/">MicroPython Main Page</a> and the <a class="reference external" href="http://docs.micropython.org/en/latest/">MicroPython Documentation</a></p>
+<p>[TOC]</p>
+<div class="section" id="prerequisites">
+<h1>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h1>
+<p>Before you can install MicroPython on an ESP32 microcontroller, there are a couple of prerequisites:</p>
+<ul class="simple">
+<li><p>a computer with a USB port and internet connection</p></li>
+<li><p>an ESP32 microcontroller</p></li>
+<li><p>a USB cable to connect the ESP32 microcontroller to your computer</p></li>
+<li><p>the <a class="reference external" href="https://www.anaconda.com/products/individual">Anaconda Distribution</a> of Python installed on your computer</p></li>
+</ul>
+<p>We will install MicroPython on our ESP32 microcontroller with our computer. This computer can be Windows10, MacOS, or Linux. These instructions are written assuming you have a Windows 10 computer, but the same general steps can be used on other operating systems. Your computer needs to be connected to the internet.</p>
+<p>You’ll need an ESP32-based microcontroller. There are a couple of different varients. Boards you could use include the <a class="reference external" href="https://www.adafruit.com/product/3405">Adafruit HUZZAH32 – ESP32 Feather Board</a> and the <a class="reference external" href="https://www.amazon.com/HiLetgo-ESP-WROOM-32-Development-Microcontroller-Integrated/dp/B0718T232Z/">HiLetgo ESP-WROOM-32 ESP32 ESP-32S Development Board</a> found on Amazon. This tutorial assumes you have one of these development boards that has a USB port on it.</p>
+<p><img alt="feather32 and hiletgo32" src="03-Installing-MicroPython/%7Bstatic%7D/posts/micropython/images/feather32_hiletgo32.png" /></p>
+<p>You also need a USB cable to connect your ESP32 microcontroller to your computer. Both the <a class="reference external" href="https://www.adafruit.com/product/3405">Adafruit Feather Huzzah 32 board</a> and the <a class="reference external" href="https://www.amazon.com/HiLetgo-ESP-WROOM-32-Development-Microcontroller-Integrated/dp/B0718T232Z/">HiLetgo ESP32 board</a> board use a micro-USB connector. Therefore, you need a micro-USB to USB-A (regular USB) cable. The cable needs to be a USB data cable and not just a USB charging cable.</p>
+<blockquote>
+<div><p><strong>Make sure the micro-USB cable is a data cable.</strong> If the ESP32 isn’t recognized by your computer (and the SiLabs driver is installed) try a different USB cable.</p>
+</div></blockquote>
+<p>This type of cable is common to many older Android phones and tablets. If you don’t have a micro-USB to USB-A cable, you can buy one at <a class="reference external" href="https://www.adafruit.com/product/592">Adafruit</a> or <a class="reference external" href="https://www.amazon.com/Amazon-Micro-USB-designed-tablets-readers/dp/B0741WGQ36">Amazon</a>.</p>
+<p>Python needs to be installed on your computer so that you can use a command-line program called <strong>esptool</strong>. I suggest you download and install the <a class="reference external" href="https://www.anaconda.com/products/individual">Anaconda Distribution</a> of Python. You can also download Python onto your computer from <a class="reference external" href="https://python.org">Python.org</a>. See <span class="xref myst">this post</span> to learn how to install the Anaconda distribution of Python on Windows.</p>
+<p>Now that we have our prerequisites setup, it’s time to download the MicroPython firmware for our ESP32 microcontroller.</p>
+</div>
+<div class="section" id="download-the-firmware">
+<h1>Download the firmware<a class="headerlink" href="#download-the-firmware" title="Permalink to this headline">¶</a></h1>
+<p>The first step to installing MicroPython on an ESP32 microcontroller is to download the MicroPython firmware from <a class="reference external" href="http://micropython.org/">micropython.org</a>.</p>
+<p>Click on the <a class="reference external" href="https://micropython.org/download/">DOWNLOAD</a> link at the top of the page.</p>
+<p><img alt="micropython downloads page" src="03-Installing-MicroPython/%7Bstatic%7D/posts/micropython/images/micropython_downloads_tab.jpg" /></p>
+<p>On the downloads page, scroll down the page until you get to the <strong>Espressif ESP-based boards</strong> section.</p>
+<p><img alt="espressif downloads section" src="03-Installing-MicroPython/%7Bstatic%7D/posts/micropython/images/espressif_section.jpg" /></p>
+<p>Select the <a class="reference external" href="https://micropython.org/download/esp32/"><strong>Generic ESP32 module</strong></a>. This brings you to the page containing <strong>Firmware for Generic ESP32 module</strong></p>
+<p><img alt="firmware_for_esp32_boards_top_of_page.png" src="03-Installing-MicroPython/%7Bstatic%7D/posts/micropython/images/firmware_for_esp32_boards_top_of_page.png" /></p>
+<p>Scroll down and select the most recent .bin file. In the picture below, that is <code class="docutils literal notranslate"><span class="pre">esp32-20210312-unstable-v1.14-108-ge98ff3f08.bin</span></code>.</p>
+<p><img alt="firmware_for_esp32_boards_firmware_listing.png" src="03-Installing-MicroPython/%7Bstatic%7D/posts/micropython/images/firmware_for_esp32_boards_listing_portion.png" /></p>
+<p>Click on the link to the .bin file. Save the file to your Downloads folder.</p>
+<p><img alt="save esp32 firmware dialog" src="03-Installing-MicroPython/%7Bstatic%7D/posts/micropython/images/save_esp32_firmware_dialog.PNG" /></p>
+<p>After the .bin file downloads, you should be able to see it in your Downloads folder.</p>
+<p><img alt="esp32 bin file in downloads folder" src="03-Installing-MicroPython/%7Bstatic%7D/posts/micropython/images/esp32_bin_file_in_downloads_folder.png" /></p>
+<p>Great! We’ve got the ESP32 firmware .bin file saved on our computer. Next, we need to install a Python package called <strong>esptool</strong> so that we can move the firmware onto our ESP32 microcontroller.</p>
+</div>
+<div class="section" id="create-a-virtual-environment-and-install-esptool">
+<h1>Create a virtual environment and install esptool<a class="headerlink" href="#create-a-virtual-environment-and-install-esptool" title="Permalink to this headline">¶</a></h1>
+<p>Now that the .bin file is download, the next thing we need to do is install a command-line tool called <strong>esptool</strong>. esptool is a Python package that we can run from the Anaconda Prompt or a terminal to flash our firmware onto our ESP32 microcontroller. Before we install esptool, let’s first create a <strong>virtual environment</strong> for our ESP32 work. The commands below assume you are using the Anaconda distribution of Python and the Anaconda Prompt for your terminal. Using the MacOS or Linux terminal and Python’s <strong>venv</strong> module is another option.</p>
+<p>Go to the Windows Start Menu and type <code class="docutils literal notranslate"><span class="pre">Anaconda</span></code></p>
+<p><img alt="anaconda in windows start menu" src="03-Installing-MicroPython/%7Bstatic%7D/posts/jupyter/anaconda_start_menu.png" /></p>
+<p>Open the Anaconda Prompt and type the command below to create a new virtual environment called <code class="docutils literal notranslate"><span class="pre">esp32</span></code>. Note that the <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> prompt character doesn’t need to be typed. <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> is included to represent the terminal prompt, not as a character to type.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&gt; conda create -y -n esp32 python=3.8
+</pre></div>
+</div>
+<p>After the virtual environment is created, it needs to be <em>activated</em> before we install esptool. Activate the <code class="docutils literal notranslate"><span class="pre">esp32</span></code> virtual environment we just created with the command below. Note that after the activation command is entered, <code class="docutils literal notranslate"><span class="pre">(esp32)</span></code> appears before the prompt. This means the <code class="docutils literal notranslate"><span class="pre">esp32</span></code> virtual environment is active.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&gt; conda activate esp32
+</pre></div>
+</div>
+<p>Once the <code class="docutils literal notranslate"><span class="pre">esp32</span></code> environment is activated (you can see <code class="docutils literal notranslate"><span class="pre">(esp32)</span></code> before the prompt), use the command below to install esptool.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&gt; python -m pip install esptool
+</pre></div>
+</div>
+<p>You can confirm the installation of esptool by typing the command below. The result should be the version of esptool that you installed.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&gt; esptool version
+esptool.py v3.0
+3.0
+</pre></div>
+</div>
+<p>Now that esptool is installed, we need to install a driver to make sure our computer recognizes our ESP32 microcontroller when we connect it.</p>
+</div>
+<div class="section" id="install-the-silabs-driver-for-the-cp210x-chip">
+<h1>Install the SiLabs driver for the CP210x chip<a class="headerlink" href="#install-the-silabs-driver-for-the-cp210x-chip" title="Permalink to this headline">¶</a></h1>
+<p>Before we can connect our ESP32 microcontroller to our computer, we need a specific driver installed. For my Windows 10 laptop to see my ESP32, the <a class="reference external" href="https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers">CP210x USB to UART Bridge VCP driver</a> needs to be downloaded from SiLabs and installed. This is quick and easy but does require admin privileges.</p>
+<p><img alt="SiLabs Driver" src="03-Installing-MicroPython/%7Bstatic%7D/posts/micropython/download_silabs_driver.PNG" /></p>
+<p>Now, we can connect our ESP32 microcontroller to our computer.</p>
+</div>
+<div class="section" id="connect-esp32-microcontroller-to-computer">
+<h1>Connect ESP32 microcontroller to computer<a class="headerlink" href="#connect-esp32-microcontroller-to-computer" title="Permalink to this headline">¶</a></h1>
+<p>Let’s review the steps we have completed so far:</p>
+<ul class="simple">
+<li><p>downloaded the firmware .bin file into our downloads folder</p></li>
+<li><p>created a virtual environment using the Anaconda Prompt</p></li>
+<li><p>installed esptool using the Anaconda Prompt</p></li>
+<li><p>installed the SiLabs CP210x drivers</p></li>
+</ul>
+<p>The next step is to connect the ESP8266 microcontroller to the computer. Connect one end of the USB cable to the microcontroller and connect the other end of the cable to a USB port on your computer. Note that <strong>it does make a difference which way is up</strong> for both sides of the USB cable.</p>
+<p>Now we need to make sure that our computer can “see” our ESP32.</p>
+</div>
+<div class="section" id="confirm-the-esp32-is-connected-in-the-windows-device-manager-and-determine-the-com-port">
+<h1>Confirm the ESP32 is connected in the Windows Device Manager and determine the COM Port<a class="headerlink" href="#confirm-the-esp32-is-connected-in-the-windows-device-manager-and-determine-the-com-port" title="Permalink to this headline">¶</a></h1>
+<p>You should be able to see the ESP8266 in the Windows Device Manager when the ESP32 is connected to your computer. You can open the Windows Device Manager from the Windows Start Menu.</p>
+<p><img alt="find device manager" src="03-Installing-MicroPython/%7Bstatic%7D/posts/micropython/find_device_manager.png" /></p>
+<p>In the Windows Device Manager, look in the <strong>Ports (COM &amp; LPT)</strong> section. You should see something like <strong>Silicon Labs CP201x USB to UART Bridge (COM4)</strong>. Make note of which COM# is in parenthesis after UART Bridge. We’ll need this COM# in the next step.</p>
+<p><img alt="UART Bridge in Device Manager" src="03-Installing-MicroPython/%7Bstatic%7D/posts/micropython/device_manager_menu.png" /></p>
+<blockquote>
+<div><p>If you can’t see the <strong>Silicon Labs CP201x USB to UART Bridge (COM4)</strong> entry in the Windows Device Manager, make sure the SiLabs driver is installed and try a different USB cable.</p>
+</div></blockquote>
+<p>After the ESP32 is connected to your computer and you know which COM# it corresponds to, you can close the Windows Device Manager and move back to the Anaconda Prompt. <strong>It’s time to install MicroPython on our ESP32!</strong></p>
+</div>
+<div class="section" id="install-micropython-with-esptool">
+<h1>Install MicroPython with esptool<a class="headerlink" href="#install-micropython-with-esptool" title="Permalink to this headline">¶</a></h1>
+<p>Everything should now be in place. Let’s review our steps so far:</p>
+<ul class="simple">
+<li><p>Downloaded .bin firmware file from the MicroPython downloads page</p></li>
+<li><p>Confirmed the .bin file is in our Downloads folder</p></li>
+<li><p>Created a virtual environment using the Anaconda Prompt</p></li>
+<li><p>Activated the virtual environment</p></li>
+<li><p>Installed esptool (into the virtual environment)</p></li>
+<li><p>Confirmed esptool was installed with <code class="docutils literal notranslate"><span class="pre">esptool</span> <span class="pre">version</span></code></p></li>
+<li><p>Installed the SiLabs CP210x driver</p></li>
+<li><p>Attached the ESP32 to the computer with a USB cable</p></li>
+<li><p>Confirmed the ESP8266 was connected in the Windows Device Manager</p></li>
+<li><p>Determined which COM# Port corresponds to the ESP32</p></li>
+</ul>
+<p>Now the only steps left are to install MicroPython on our ESP32 and confirm that MicroPython works. We are almost there.</p>
+<p>Go back to the Anaconda Prompt and make sure the <code class="docutils literal notranslate"><span class="pre">(esp32)</span></code> virtual environment is active. Remember in the commands below, you do not need to type <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>. The <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> character is shown to indicate the Anaconda Prompt.</p>
+<p>Navigate the Downloads folder:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&gt; cd Downloads
+</pre></div>
+</div>
+<p>You can run the <code class="docutils literal notranslate"><span class="pre">dir</span></code> command in the Anaconda Prompt to see the contents of the Downloads directory. This will print out the directory name and list the directory contents.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&gt; dir
+</pre></div>
+</div>
+<p>On the <a class="reference external" href="https://micropython.org/download/esp32/">MicroPython ESP32 firmware downloads page</a>, we can see the commands we need to run to install MicroPython on our ESP32:</p>
+<p><img alt="esptool erase flash" src="03-Installing-MicroPython/%7Bstatic%7D/posts/micropython/images/esp32_program_board_instructions_from_micropython.PNG" /></p>
+<p>Use the command below to erase the flash memory on the ESP32. Make sure to modify <code class="docutils literal notranslate"><span class="pre">COM4</span></code> to correspond to the COM# from the Windows Device Manager.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&gt; esptool --chip esp32 --port COM4 erase_flash
+</pre></div>
+</div>
+<p>Now it’s time to write the .bin firmware file to the flash memory on the board using the <code class="docutils literal notranslate"><span class="pre">write_flash</span></code> command. Make sure to use the exact .bin firmware file name you see in the <strong>Downloads</strong> directory. The port has to be set as the port you found in the Windows Device Manager. <code class="docutils literal notranslate"><span class="pre">---baud</span></code> is the baud rate or upload speed. I found that <code class="docutils literal notranslate"><span class="pre">--baud</span> <span class="pre">460800</span></code> works just fine. Make sure the .bin firmware file name is correct. It is easy to mistype. The latest version may not be <code class="docutils literal notranslate"><span class="pre">esp32-20210312-unstable-v1.14-108-ge98ff3f08.bin</span></code>. You can start typing the .bin file name and then use the [TAB] key to auto-complete the rest of the filename.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&gt; esptool --chip esp32 --port COM4 --baud 460800 write_flash -z 0x1000 esp32-20210312-unstable-v1.14-108-ge98ff3f08.bin
+</pre></div>
+</div>
+<p>Congratulations! MicroPython should now be installed on your ESP32 microcontroller. To make sure the MicroPython installation was successful, we’ll connect to our ESP32 using a tool called <a class="reference external" href="https://www.putty.org/">PuTTY</a>.</p>
+</div>
+<div class="section" id="download-and-install-putty-a-serial-monitor">
+<h1>Download and install PuTTY, a serial monitor<a class="headerlink" href="#download-and-install-putty-a-serial-monitor" title="Permalink to this headline">¶</a></h1>
+<p>Now that Micropthon is installed on our ESP32 microcontroller, we can communicate with our ESP32 over a serial connection. Windows 10 doesn’t have a built-in serial monitor (like screen on MacOS and Linux). So we need to download and install <strong>PuTTY</strong>. PuTTY is a lightweight SSH and serial client that works on Windows. PuTTY allows us to send and receive commands between our computer and our ESP32 microcontroller. <a class="reference external" href="https://www.putty.org/">PuTTY can be downloaded here</a>. PuTTY is pretty lightweight. The download and installation are pretty quick.</p>
+<p><a class="reference external" href="https://www.putty.org/"><img alt="Download Putty" src="03-Installing-MicroPython/%7Bstatic%7D/posts/micropython/download_putty.PNG" /></a></p>
+</div>
+<div class="section" id="use-putty-to-send-commands-to-the-esp32">
+<h1>Use PuTTY to send commands to the ESP32<a class="headerlink" href="#use-putty-to-send-commands-to-the-esp32" title="Permalink to this headline">¶</a></h1>
+<p>Ensure the ESP32 microcontroller is connected with a USB cable and make sure you can see the ESP32 in the Windows Device Manager. Then use PuTTY to connect to the board over serial.</p>
+<p>Search for PuTTY in the Windows Start Menu.</p>
+<p><img alt="PuTTY in start menu" src="03-Installing-MicroPython/%7Bstatic%7D/posts/micropython/putty_in_start_menu.png" /></p>
+<p>You can’t connect to the ESP32 over SSH. You need to select the <strong>Serial</strong> radio button below the header <strong>Connection type:</strong> near the top of the PuTTY window to connect to your ESP32.</p>
+<p>In the PuTTY window, make sure to specify the correct COM# port in the <strong>Serial line</strong> box and include <strong>115200</strong> baud in the <strong>Speed</strong> box.</p>
+<blockquote>
+<div><p><strong>MicroPython runs at 115200 baud</strong>- other baud rates will lead to junk characters in the serial monitor.</p>
+</div></blockquote>
+<p><img alt="PuTTY config" src="03-Installing-MicroPython/%7Bstatic%7D/posts/micropython/putty_settings.png" /></p>
+<p>Now click [Open]. If you see <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code> the MicroPython REPL (the MicroPython prompt) is running and the ESP32 is working! This version of Python isn’t running on your computer, it’s MicroPython running on the little ESP32 microcontroller! Sometimes you might have to type [Enter] or [Ctrl-D] to get the <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code> REPL prompt to show up. A few times I needed to close PuTTY, unplug then replug the board and try PuTTY again. Many ESP32 microcontrollers have a tiny little black RESET button that can be pressed to restart the board. If you can’t connect to the ESP32 with PuTTY, you can try pressing the RESET button.</p>
+<p><img alt="REPL Prompt" src="03-Installing-MicroPython/%7Bstatic%7D/posts/micropython/images/esp32_startup_in_putty_window.PNG" /></p>
+<p>At the <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code> MicroPython REPL prompt try the following commands:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; print(&#39;MicroPython for Engineers!&#39;)
+MicroPython for Engineers
+&gt;&gt;&gt; import sys
+&gt;&gt;&gt; sys.platform
+&#39;esp32&#39;
+</pre></div>
+</div>
+</div>
+<div class="section" id="run-a-few-commands-to-turn-the-built-in-led-on-and-off">
+<h1>Run a few commands to turn the built-in LED on and off<a class="headerlink" href="#run-a-few-commands-to-turn-the-built-in-led-on-and-off" title="Permalink to this headline">¶</a></h1>
+<p><strong>Let’s celebrate! Micropython is running on our ESP32 microcontroller!</strong></p>
+<p>If the commands above worked, you can try and turn the built-in LED that’s on many ESP32-based boards to turn on and off.</p>
+<blockquote>
+<div><p>On most ESP32 microcontrollers, the built-in LED is connected to Pin 2</p>
+</div></blockquote>
+<p>At the MicroPython REPL (in the PuTTY window), try the commands below:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; from machine import Pin
+&gt;&gt;&gt; p2 = Pin(2, Pin.OUT)
+&gt;&gt;&gt; p2.on()
+&gt;&gt;&gt; p2.off()
+</pre></div>
+</div>
+<p><img alt="esp32 LED on LED off" src="03-Installing-MicroPython/%7Bstatic%7D/posts/micropython/images/esp32_led_off_led_on.png" /></p>
+</div>
+<div class="section" id="going-further">
+<h1>Going Further<a class="headerlink" href="#going-further" title="Permalink to this headline">¶</a></h1>
+<p>In this post, we installed MicroPython on an ESP32 microcontroller. After MicroPython is installed, you can use a tool like <a class="reference external" href="https://pypi.org/project/adafruit-ampy/"><strong>ampy</strong></a> to move .py-files onto the board. You can program your ESP32 to do a wide variety of things. Some project ideas are below:</p>
+<ul class="simple">
+<li><p>Connect an LED to the ESP32 and blink the LED on and off using a for loop</p></li>
+<li><p>Connect a sensor to the ESP32 and read the sensor using the ESP32’s built-in analog-to-digital converter (ADC)</p></li>
+<li><p>Connect the ESP32 to your WiFi network and turn the ESP32 into a remote weather station</p></li>
+</ul>
+<p>I hope you had fun installing MicroPython on your ESP32.</p>
+<p><strong>Now get out there and write some MicroPython code!</strong></p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./03-Installing-MicroPython"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Peter D. Kazarinoff<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

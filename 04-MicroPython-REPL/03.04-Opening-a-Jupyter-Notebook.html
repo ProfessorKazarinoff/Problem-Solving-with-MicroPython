@@ -1,0 +1,484 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Opening a Jupyter Notebook &#8212; Problem Solving with MicroPython</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Problem Solving with MicroPython</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../welcome.html">
+   Problem Solving with MicroPython Book
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Chapters
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../00-Preface/00-00-Motivation.html">
+   1. Preface
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../00-Preface/00-01-Acknowledgements.html">
+     Acknowledgements
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../00-Preface/00-02-Supporting_Materials.html">
+     Supporting Materials
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../00-Preface/00-04-Errata.html">
+     Errata
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../00-Preface/00-05-Hardware.html">
+     Hardware
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../01-What-is-MicroPython/01-00-Introduction.html">
+   2. What is Python?
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-What-is-MicroPython/01-01-What_is_Python.html">
+     What is Python?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-What-is-MicroPython/01-02-Why_Python.html">
+     Why Python?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-What-is-MicroPython/01-03-What_is_Anaconda.html">
+     What is Anaconda?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-What-is-MicroPython/01-04-Summary.html">
+     Summary
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Appendix
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../99-Appendix/99-01-Built_in_Functions.html">
+   Python Built-in Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../99-Appendix/99-02-Virtual_Environments.html">
+   Virtual Environments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../99-Appendix/99-03-Problem_Solving_with_MicroPython_Book_Construction.html">
+   Problem Solving 101 with Python Book Construction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../99-Appendix/99-04-Contributions.html">
+   Contributions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../99-Appendix/99-05-About_the_Author.html">
+   About the Author
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/04-MicroPython-REPL/03.04-Opening-a-Jupyter-Notebook.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ProfessorKazarinoff/Problem-Solving-with-MicroPython/"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/ProfessorKazarinoff/Problem-Solving-with-MicroPython//issues/new?title=Issue%20on%20page%20%2F04-MicroPython-REPL/03.04-Opening-a-Jupyter-Notebook.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ProfessorKazarinoff/Problem-Solving-with-MicroPython/master?urlpath=tree/Problem-Solving-with-MicroPython-Book/04-MicroPython-REPL/03.04-Opening-a-Jupyter-Notebook.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ways-to-open-a-jupyter-notebook">
+   3 ways to open a
+   <strong>
+    Jupyter notebook
+   </strong>
+   :
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#windows-start-menu">
+   Windows Start Menu
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-anaconda-prompt">
+   The
+   <strong>
+    Anaconda Prompt
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#anaconda-navigator">
+   3.
+   <strong>
+    Anaconda Navigator
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#opening-a-jupyter-notebook-on-macos">
+   Opening a Jupyter Notebook on MacOS
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#opening-a-jupyter-notebook-on-linux">
+   Opening a Jupyter Notebook on Linux
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="opening-a-jupyter-notebook">
+<h1>Opening a Jupyter Notebook<a class="headerlink" href="#opening-a-jupyter-notebook" title="Permalink to this headline">¶</a></h1>
+<p>In this section, we will run through how to open a <em>jupyter notebook</em> on Windows 10 and MacOS.  Jupyter notebooks are one way problem solvers can write and execute Python code. Jupyter notebooks contain Python code, the output of that code produces when it is run and markdown cells to explain what the code means. On Windows 10, a Jupyter notebook can be started from the <strong>Anaconda Prompt</strong>, the Windows start menu and <strong>Anaconda Navigator</strong>.</p>
+<div class="section" id="ways-to-open-a-jupyter-notebook">
+<h2>3 ways to open a <strong>Jupyter notebook</strong>:<a class="headerlink" href="#ways-to-open-a-jupyter-notebook" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Windows Start Menu</p></li>
+<li><p><strong>Anaconda Prompt</strong></p></li>
+<li><p>Anaconda Navigator</p></li>
+</ul>
+</div>
+<div class="section" id="windows-start-menu">
+<h2>Windows Start Menu<a class="headerlink" href="#windows-start-menu" title="Permalink to this headline">¶</a></h2>
+<p>A simple way to open a <strong>Jupyter notebook</strong> is to use the Windows start menu.</p>
+<p>Open the Windows start menu and select <strong>[Anaconda3(64 bit)]</strong> –&gt; <strong>[Jupyter Notebook]</strong></p>
+<p><img alt="Windows 10 Start Menu showing the Jupyter Notebook application" src="../_images/windows_start_jupyter_notebook.png" /></p>
+<p>This will open the <strong>Jupyter file browser</strong> in a web browser tab.</p>
+<p>In the upper right select <strong>[New]</strong> –&gt; <strong>[Python 3]</strong></p>
+<p><img alt="Jupyter Notebook file browser" src="../_images/new_notebook_from_browser.png" /></p>
+<p>A new <strong>notebook</strong> will open as a new tab in your web browser</p>
+<p><img alt="a newly opened Jupyter Nobebook" src="../_images/new_notebook.png" /></p>
+<p>To rename the <strong>Jupyter notebook</strong>, click the file name at the top of the page to the right of the Jupyter icon.</p>
+<p><img alt="Change the name of a Jupyter Notebook" src="../_images/click_change_name.png" /></p>
+<p>This will open a dialog box where the new name can be typed.</p>
+<p><img alt="Rename a Jupyter Notebook" src="../_images/rename_window.png" /></p>
+<p>Try typing this in the first cell in the notebook to the right of the <code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[</span> <span class="pre">]:</span></code> prompt:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">this</span>
+</pre></div>
+</div>
+<p>Then click the run button in the middle of the menu at the top of the notebook.</p>
+<p><img alt="Jupyter Notebook running &quot;import this&quot;" src="../_images/run_import_this.png" /></p>
+</div>
+<div class="section" id="the-anaconda-prompt">
+<h2>The <strong>Anaconda Prompt</strong><a class="headerlink" href="#the-anaconda-prompt" title="Permalink to this headline">¶</a></h2>
+<p>Another method to start a new Jupyter notebook is to use the <strong>Anaconda Prompt</strong>.</p>
+<p>Go to the Windows start menu and select <strong>[Anaconda Prompt]</strong> under <strong>[Anaconda3]</strong>.</p>
+<p><img alt="Windows 10 Start Menu showing the Anaconda Prompt application" src="../_images/anaconda_start_menu.png" /></p>
+<p>If you don’t see the <strong>Anaconda Prompt</strong> in the Windows Start Menu, then you need to install <strong>Anaconda</strong>. Download <strong>Anaconda</strong> at the following link: <a class="reference external" href="https://www.anaconda.com/download/">Anaconda.com/downloads</a></p>
+<p>The <strong>Anaconda Prompt</strong> window should look something like:</p>
+<p><img alt="Anaconda Prompt" src="../_images/jupyter_notebook_anaconda_prompt.png" /></p>
+<p>At the <strong>Anaconda Prompt</strong> type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">jupyter</span> <span class="n">notebook</span>
+</pre></div>
+</div>
+<p>This will start the <strong>jupyter notebook</strong>. The output in the text terminal will look something like below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Copy/paste this URL into your browser when you connect for the first time,
+    to login with a token:
+        http://localhost:8888/?token=6bdef677d3503fbb23e1b4fa0c802e ...
+[I 16:14:12.661 NotebookApp] Accepting one-time-token-authenticated ...
+</pre></div>
+</div>
+<p>A web browser should open and you should be able to see the <strong>jupyter file browser</strong>.</p>
+<p><img alt="Jupyter Notebook file browser- create new notebook" src="../_images/new_notebook_from_browser.png" /></p>
+<p>In the upper right select <strong>[New]</strong> –&gt; <strong>[Python 3]</strong></p>
+<p>You will see a new tab open in your web browser. This new page is a <strong>jupyter notebook</strong>.</p>
+<p><img alt="Newly opened Jupyter Notebook" src="../_images/new_notebook.png" /></p>
+</div>
+<div class="section" id="anaconda-navigator">
+<h2>3. <strong>Anaconda Navigator</strong><a class="headerlink" href="#anaconda-navigator" title="Permalink to this headline">¶</a></h2>
+<p>One additional way to open a <strong>jupyter notebook</strong> is to use <strong>Anaconda Navigator</strong>. Open <strong>Anaconda Navigator</strong> using the Windows start menu and select <strong>[Anaconda3(64-bit)]</strong> –&gt; <strong>[Anaconda Navigator]</strong>.</p>
+<p><img alt="Windows 10 Start Menu showing the Anaconda Navigator application" src="../_images/windows_start_anaconda_navigator.png" /></p>
+<p>An <strong>Anaconda Navigator</strong> will open. In the middle of the page, in the <strong>jupyter notebook</strong> tile, click <strong>[Launch]</strong></p>
+<p><img alt="Anaconda Navigator- launch new Jupyter Notebook" src="../_images/anaconda_navigator_jupyter_notebook_launch.png" /></p>
+<p>A <strong>jupyter file browser</strong> will open in a web browser tab.</p>
+<p>In the upper right select <strong>[New]</strong> –&gt; <strong>[Python 3]</strong></p>
+<p><img alt="Jupyter Notebook file browser - create new Notebook" src="../_images/new_notebook_from_browser.png" /></p>
+<p>A new <strong>notebook</strong> will open as a new tab in your web browser</p>
+<p><img alt="Newly opened Jupyter Notebook" src="../_images/new_notebook.png" /></p>
+</div>
+<div class="section" id="opening-a-jupyter-notebook-on-macos">
+<h2>Opening a Jupyter Notebook on MacOS<a class="headerlink" href="#opening-a-jupyter-notebook-on-macos" title="Permalink to this headline">¶</a></h2>
+<p>To open a Jupyter notebook on MacOS, open the MacOS terminal and type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ jupyter notebook
+</pre></div>
+</div>
+<p>If a web browser does not open, <strong>jupyter</strong> may not be installed. Refer to the previous section on how to install <strong>jupyter</strong> on MacOS. There also may be an issue using the system version of Python. A solution is to install the <strong>Anaconda</strong> distribution of Python or use homebrew to install Python.</p>
+</div>
+<div class="section" id="opening-a-jupyter-notebook-on-linux">
+<h2>Opening a Jupyter Notebook on Linux<a class="headerlink" href="#opening-a-jupyter-notebook-on-linux" title="Permalink to this headline">¶</a></h2>
+<p>To open a Jupyter notebook using the Linux operating system, open a terminal and type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ jupyter notebook
+</pre></div>
+</div>
+<p>If a web browser does not open, copy the URL listed in the terminal (when Jupyter starts) into a browser window.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./04-MicroPython-REPL"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Peter D. Kazarinoff<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

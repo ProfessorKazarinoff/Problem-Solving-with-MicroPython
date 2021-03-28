@@ -1,0 +1,512 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Installing Anaconda on Linux &#8212; Problem Solving with MicroPython</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Problem Solving with MicroPython</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../welcome.html">
+   Problem Solving with MicroPython Book
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Chapters
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../00-Preface/00-00-Motivation.html">
+   1. Preface
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../00-Preface/00-01-Acknowledgements.html">
+     Acknowledgements
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../00-Preface/00-02-Supporting_Materials.html">
+     Supporting Materials
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../00-Preface/00-04-Errata.html">
+     Errata
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../00-Preface/00-05-Hardware.html">
+     Hardware
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../01-What-is-MicroPython/01-00-Introduction.html">
+   2. What is Python?
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-What-is-MicroPython/01-01-What_is_Python.html">
+     What is Python?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-What-is-MicroPython/01-02-Why_Python.html">
+     Why Python?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-What-is-MicroPython/01-03-What_is_Anaconda.html">
+     What is Anaconda?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-What-is-MicroPython/01-04-Summary.html">
+     Summary
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Appendix
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../99-Appendix/99-01-Built_in_Functions.html">
+   Python Built-in Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../99-Appendix/99-02-Virtual_Environments.html">
+   Virtual Environments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../99-Appendix/99-03-Problem_Solving_with_MicroPython_Book_Construction.html">
+   Problem Solving 101 with Python Book Construction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../99-Appendix/99-04-Contributions.html">
+   Contributions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../99-Appendix/99-05-About_the_Author.html">
+   About the Author
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/03-Installing-MicroPython/02.03-Installing-Anaconda-on-Linux.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ProfessorKazarinoff/Problem-Solving-with-MicroPython/"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/ProfessorKazarinoff/Problem-Solving-with-MicroPython//issues/new?title=Issue%20on%20page%20%2F03-Installing-MicroPython/02.03-Installing-Anaconda-on-Linux.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ProfessorKazarinoff/Problem-Solving-with-MicroPython/master?urlpath=tree/Problem-Solving-with-MicroPython-Book/03-Installing-MicroPython/02.03-Installing-Anaconda-on-Linux.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#steps">
+   Steps:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visit-the-anaconda-downloads-page">
+   1. Visit the Anaconda downloads page
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#select-linux">
+   2. Select Linux
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#copy-the-bash-sh-file-installer-link">
+   3. Copy the bash (.sh file) installer link
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#use-wget-to-download-the-bash-installer">
+   4. Use
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     wget
+    </span>
+   </code>
+   to download the bash installer
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#run-the-bash-script-to-install-anaconda3">
+   5. Run the bash script to install
+   <strong>
+    Anaconda3
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#source-the-bash-rc-file-to-add-anaconda-to-your-path">
+   6.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     source
+    </span>
+   </code>
+   the
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     .bash-rc
+    </span>
+   </code>
+   file to add Anaconda to your
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     PATH
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#start-the-python-repl">
+   7. Start the Python REPL
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="installing-anaconda-on-linux">
+<h1>Installing Anaconda on Linux<a class="headerlink" href="#installing-anaconda-on-linux" title="Permalink to this headline">¶</a></h1>
+<p>In this section, we will run through installing the <strong>Anaconda</strong> distribution of Python on Linux, specifically Ubuntu 16.04. Ubuntu 16.04 comes pre-installed with Python (Version 3.3) and legacy Python (Version 2.7). You can confirm this legacy version of Python is installed by opening up a terminal.</p>
+<p>In the terminal type:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ python
+</pre></div>
+</div>
+<p>You will most likely see version 2.7 is installed. If you enter:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ python3
+</pre></div>
+</div>
+<p>You will most likely see version 3.3 is installed. You can use this version of Python, but each time a new package needs to be downloaded, the <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">pip3</span> <span class="pre">install</span></code> command must be used.</p>
+<p>Install the <strong>Anaconda</strong> distribution of Python to follow the examples in the book without the need to install additional external packages</p>
+<div class="section" id="steps">
+<h2>Steps:<a class="headerlink" href="#steps" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Visit <a class="reference external" href="https://www.anaconda.com/download/">Anaconda.com/downloads</a></p></li>
+<li><p>Select Linux</p></li>
+<li><p>Copy the bash (.sh file) installer link</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">wget</span></code> to download the bash installer</p></li>
+<li><p>Run the bash script to install <strong>Anaconda3</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">source</span></code> the <code class="docutils literal notranslate"><span class="pre">.bash-rc</span></code> file to add Anaconda to your <code class="docutils literal notranslate"><span class="pre">PATH</span></code></p></li>
+<li><p>Start the Python REPL</p></li>
+</ol>
+</div>
+<div class="section" id="visit-the-anaconda-downloads-page">
+<h2>1. Visit the Anaconda downloads page<a class="headerlink" href="#visit-the-anaconda-downloads-page" title="Permalink to this headline">¶</a></h2>
+<p>Go to the following link: <a class="reference external" href="https://www.anaconda.com/download/">Anaconda.com/downloads</a></p>
+<p>The Anaconda Downloads Page will look something like this:</p>
+<p><img alt="Anaconda downloads page" src="../_images/anaconda_download_page.png" /></p>
+</div>
+<div class="section" id="select-linux">
+<h2>2. Select Linux<a class="headerlink" href="#select-linux" title="Permalink to this headline">¶</a></h2>
+<p>On the downloads page, select the [Linux] operating system</p>
+</div>
+<div class="section" id="copy-the-bash-sh-file-installer-link">
+<h2>3. Copy the bash (.sh file) installer link<a class="headerlink" href="#copy-the-bash-sh-file-installer-link" title="Permalink to this headline">¶</a></h2>
+<p>In the *<em>Python 3.6 Version</em> ** box, right-click on the [64-Bit(x86) Installer] link. Select [copy link address].</p>
+<p><img alt="Anaconda downloads page: copy link address" src="../_images/anaconda_install_linux_copy_link_address.png" /></p>
+</div>
+<div class="section" id="use-wget-to-download-the-bash-installer">
+<h2>4. Use <code class="docutils literal notranslate"><span class="pre">wget</span></code> to download the bash installer<a class="headerlink" href="#use-wget-to-download-the-bash-installer" title="Permalink to this headline">¶</a></h2>
+<p>Now that the bash installer (.sh file) link is stored on the clipboard, use <code class="docutils literal notranslate"><span class="pre">wget</span></code> to download the installer script. In a terminal, <code class="docutils literal notranslate"><span class="pre">cd</span></code> into the home directory and make a new directory called <code class="docutils literal notranslate"><span class="pre">tmp</span></code>. <code class="docutils literal notranslate"><span class="pre">cd</span></code> into <code class="docutils literal notranslate"><span class="pre">tmp</span></code> and use <code class="docutils literal notranslate"><span class="pre">wget</span></code> to download the installer. Although the installer is a bash script, it is still quite large and the download will not be immediate.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd ~
+$ mkdir tmp
+$ cd tmp
+$ wget https://repo.anaconda.com/archive/Anaconda3-5.2.0-Linux-x86_64.sh 
+</pre></div>
+</div>
+</div>
+<div class="section" id="run-the-bash-script-to-install-anaconda3">
+<h2>5. Run the bash script to install <strong>Anaconda3</strong><a class="headerlink" href="#run-the-bash-script-to-install-anaconda3" title="Permalink to this headline">¶</a></h2>
+<p>With the bash installer script downloaded, run the <strong><em>.sh</em></strong> script to install <strong>Anaconda3</strong>. Ensure you are in the directory where the installer script downloaded:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls
+Anaconda3-5.2.0-Linux-x86_64.sh
+</pre></div>
+</div>
+<p>Run the installer script with bash</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ bash Anaconda3-5.2.0-Linux-x86_64.sh
+</pre></div>
+</div>
+<p>Accept the Licence Agreement and allow Anaconda to be added to your <code class="docutils literal notranslate"><span class="pre">PATH</span></code>. By adding Anaconda to your <code class="docutils literal notranslate"><span class="pre">PATH</span></code> the Anaconda distribution of Python will be called when you type <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">python</span></code>.</p>
+</div>
+<div class="section" id="source-the-bash-rc-file-to-add-anaconda-to-your-path">
+<h2>6. <code class="docutils literal notranslate"><span class="pre">source</span></code> the <code class="docutils literal notranslate"><span class="pre">.bash-rc</span></code> file to add Anaconda to your <code class="docutils literal notranslate"><span class="pre">PATH</span></code><a class="headerlink" href="#source-the-bash-rc-file-to-add-anaconda-to-your-path" title="Permalink to this headline">¶</a></h2>
+<p>Now that <strong>Anaconda3</strong> is installed and <strong>Anaconda3</strong> is added to our <code class="docutils literal notranslate"><span class="pre">PATH</span></code>, <code class="docutils literal notranslate"><span class="pre">source</span></code> the <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> file to load the new <code class="docutils literal notranslate"><span class="pre">PATH</span></code> environmnet variable into the current terminal session. Note the <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> file is in the home directory. You can see it with <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">ls</span> <span class="pre">-a</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd ~
+$ source .bashrc
+</pre></div>
+</div>
+</div>
+<div class="section" id="start-the-python-repl">
+<h2>7. Start the Python REPL<a class="headerlink" href="#start-the-python-repl" title="Permalink to this headline">¶</a></h2>
+<p>To verify the installation is complete, try to open Python from the command line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python
+
+Python 3.6.5 |Anaconda, Inc.| (default, Mar 29 2018, 18:21:58)
+[GCC 7.2.0] on linux
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt;
+</pre></div>
+</div>
+<p>If you see Python 3.6 from Anaconda listed, your installation is complete. To exit the Python REPL, type:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; exit()
+</pre></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./03-Installing-MicroPython"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Peter D. Kazarinoff<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
