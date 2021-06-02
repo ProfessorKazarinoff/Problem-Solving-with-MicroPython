@@ -113,7 +113,7 @@ toml==0.10.2
 tornado==6.1
 traitlets==5.0.5
 uc-micro-py==1.0.1
-urllib3==1.26.4
+urllib3==1.26.5
 wcwidth==0.2.5
 webencodings==0.5.1
 widgetsnbextension==3.5.1
