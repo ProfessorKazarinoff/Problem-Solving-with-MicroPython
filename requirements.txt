@@ -57,7 +57,7 @@ nbdime==2.1.0
 nbformat==5.1.2
 nest-asyncio==1.5.1
 nested-lookup==0.2.22
-notebook==6.2.0
+notebook==6.4.10
 numpy==1.20.1
 openpyxl==3.0.7
 packaging==20.9
